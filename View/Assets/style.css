@@ -155,7 +155,9 @@ td:last-child { white-space: nowrap; } /* Impede que botões quebrem linha */
     color: #212529 !important; /* Texto escuro */
     border: 1px solid #e0a800;
 }
-.btn-editar:hover { background-color: #e0a800; }
+.btn-editar:hover { 
+    background-color: #e0a800; 
+}
 
 /* Botão Excluir (Vermelho -> Texto Branco) */
 .btn-excluir {
@@ -166,9 +168,53 @@ td:last-child { white-space: nowrap; } /* Impede que botões quebrem linha */
 .btn-excluir:hover { background-color: #c82333; }
 
 /* Botão Cancelar/Voltar (Cinza) */
-.btn-secondary {
+.btn-voltar {
     background-color: #6c757d;
-    color: white !important;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
 
 /* =========================================

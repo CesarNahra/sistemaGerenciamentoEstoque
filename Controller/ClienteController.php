@@ -32,7 +32,7 @@
                 exit();
             }
 
-            require_once __DIR__ . '/../View/Cliente/Dashboard.php';
+            require_once __DIR__ . '/../View/Cliente/EditarPerfil.php';
         }
 
         public function configuracoes(){
