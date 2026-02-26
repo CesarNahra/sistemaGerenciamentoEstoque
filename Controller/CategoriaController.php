@@ -115,7 +115,7 @@
             case 'excluirCategoria':
                 $controller->excluirCategoria();
                 break;
-            case 'prepararEdicao':
+            case 'prepararEdicaoCategoria':
                 $controller->prepararEdicaoCategoria();
                 break;
             case 'atualizarFornecedor':

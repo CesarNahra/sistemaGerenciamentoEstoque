@@ -19,13 +19,14 @@
                     $_SESSION['nome'] = $dadosUsuario['nome'];
                     $_SESSION['email'] = $dadosUsuario['email'];
                     $_SESSION['tipo'] = $dadosUsuario['tipo'];
+                    $_SESSION['nomeEmpresa'] = $dadosUsuario['nomeEmpresa'];
 
                     $usuario = null;
 
                     if($dadosUsuario['tipo'] === 'admin'){
                     $usuario = new Administrador($dadosUsuario['nome'], $dadosUsuario['email'], $dadosUsuario['senha']);
                     } else {
-                        $usuario = new Cliente($dadosUsuario['nome'], $dadosUsuario['email'], $dadosUsuario['senha'], null);
+                        $usuario = new Cliente($dadosUsuario['nome'], $dadosUsuario['email'], $dadosUsuario['senha'], $dadosUsuario['nomeEmpresa']);
                     }
 
                     $endereco = $usuario->enderecoPaginaInicial();
