@@ -73,6 +73,50 @@
             
             echo "<h1>Página de Configurações em construção...</h1>";
         }
+
+        public function atualizarPerfil(){
+            session_start();
+
+            if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 'cliente'){
+                header("Location: ../index.php");
+                exit();
+            }
+
+            $usuario = new Cliente(null, null, null, null);
+
+            $usuario->atualizar(
+                $_SESSION['id'],
+                $_POST['nome'],
+                $_POST['email']
+            );
+
+            // Atualiza sessão
+            $_SESSION['nome'] = $_POST['nome'];
+            $_SESSION['email'] = $_POST['email'];
+
+            header("Location: ClienteController.php?acao=perfil");
+            exit();
+        }
+
+        public function excluirPerfil() {
+            session_start();
+
+            if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 'cliente'){
+                header("Location: ../index.php");
+                exit();
+            }
+
+            $id = $_SESSION['id'];
+
+            $cliente = new Cliente(null, null, null, null);
+            $cliente->excluir($id);
+
+            session_destroy();
+
+            echo "Conta excluída com sucesso. Redirecionando...";
+            header("Refresh: 3; url=../index.php");
+            exit();
+        }
     }
 
     if(isset($_REQUEST['acao'])){
@@ -95,6 +139,12 @@
                 break;
             case 'alterarTema':
                 $controller->alterarTema();
+                break;
+            case 'atualizarPerfil':
+                $controller->atualizarPerfil();
+                break;
+            case 'excluirPerfil':
+                $controller->excluirPerfil();
                 break;
         }
     }

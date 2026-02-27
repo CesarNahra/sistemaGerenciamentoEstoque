@@ -32,16 +32,12 @@
                     onchange="this.form.submit()">
                 <span class="slider"></span>
             </label>
-
-            <br><br>
-
-            <button class="btn" type="submit">Salvar</button>
         </form>
 
         <br>
-        <button class="btn btn-voltar" onclick="window.location.href='../Controller/ClienteController.php?acao=dashboard'">
+        <a class="btn btn-voltar" href="../Controller/ClienteController.php?acao=dashboard">
             Voltar para o Dashboard
-        </button>
+        </a>
     </div>
 </body>
 </html>

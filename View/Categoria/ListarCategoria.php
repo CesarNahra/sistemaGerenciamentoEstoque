@@ -59,6 +59,10 @@
                 <?php endif; ?>
             </tbody>
         </table>
+
+        <button class="btn btn-voltar" onclick="window.location.href='../Controller/ClienteController.php?acao=dashboard'">
+            Voltar ao Dashboard
+        </button>
     </div>
 </body>
 </html>

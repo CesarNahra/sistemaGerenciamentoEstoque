@@ -43,7 +43,9 @@
             Editar Perfil
         </button>
 
-        <button class="btn btn-excluir" onclick="window.location.href='../Controller/ClienteController.php?acao=excluir'" onclick="return confirm('Tem certeza que deseja excluir sua conta?');">
+        <button class="btn btn-excluir" onclick="if(confirm('Tem certeza que deseja excluir sua conta?')) {
+                window.location.href='../Controller/ClienteController.php?acao=excluirPerfil';
+            }">
             Excluir Conta
         </button>
     </div>

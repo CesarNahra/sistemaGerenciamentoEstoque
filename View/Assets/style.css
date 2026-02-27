@@ -101,6 +101,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
+    margin-bottom: 15px;
     background-color: white;
 }
 
@@ -214,7 +215,6 @@ input:checked + .slider:before {
 
 .dark-mode {
     background-color: #1e1e1e;
-    color: #ffffff;
 }
 
 /* =========================================
@@ -294,4 +294,58 @@ body.login-page {
     cursor: pointer;
     font-weight: 600;
     transition: opacity 0.2s;
+}
+
+/* --- CSS Específico para o Menu em Grid --- */
+.menu-grid {
+    display: grid;
+    /* ALTERADO: Força exatamente 3 colunas de tamanhos iguais */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; /* Aumentei um pouco o espaço entre eles */
+    margin-top: 40px;
+    max-width: 1000px; /* Limita a largura para não ficar muito esticado */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-card {
+    background-color: white;
+    padding: 30px 20px; /* Mais espaçamento interno */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px; /* Altura fixa para ficarem iguais */
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,123,255,0.15); /* Sombra azulada ao passar o mouse */
+    border-color: #007bff;
+}
+
+.menu-icon {
+    font-size: 3rem; /* Ícone maior */
+    margin-bottom: 15px;
+}
+
+.menu-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsividade: Em celulares, volta para 1 coluna para não quebrar */
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
 }

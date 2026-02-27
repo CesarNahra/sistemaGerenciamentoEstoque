@@ -63,6 +63,9 @@
                 </form>
             </div>
 
+            <button class="btn btn-voltar" onclick="window.location.href='../Controller/ClienteController.php?acao=dashboard'">
+                Voltar ao Dashboard
+            </button>
         </div>
     </div>
 </body>

@@ -38,7 +38,7 @@
                 <input type="hidden" name="acao" value="atualizarPerfil">
                 
                 <div style="margin-top: 15px;">
-                    <button type="submit" class="btn" onclick="window.location.href='../Controller/ClienteController.php?acao=dashboard'">Atualizar</button>
+                    <button type="submit" class="btn">Atualizar</button>
                     <a href="ClienteController.php?acao=perfil" class="btn" style="background-color: #6c757d;">Cancelar</a>
                 </div>
             </fieldset>

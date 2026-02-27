@@ -31,6 +31,30 @@
             return false;
         }
 
+        public function atualizar($id, $nome, $email){
+            $conexao = Conexao::Conectar();
+            $consultaSql = "UPDATE usuarios SET nome = :nome, email = :email
+                    WHERE id = :id";
+
+            $declaracao = $conexao->prepare($consultaSql);
+            $declaracao->bindValue(":nome", $nome);
+            $declaracao->bindValue(":email", $email);
+            $declaracao->bindValue(":id", $id);
+            return $declaracao->execute();
+        }
+
+        public function excluir($id){
+            $conexao = Conexao::Conectar();
+
+            $consultaSql = "DELETE FROM usuarios WHERE id = :id";
+
+            $declaracao = $conexao->prepare($consultaSql);
+            $declaracao->bindValue(":id", $id);
+
+            return $declaracao->execute();
+        }
+
+
         public function getId(){ 
             return $this->id; 
         }
