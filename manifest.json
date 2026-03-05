@@ -1,7 +1,7 @@
 {
   "name": "Sistema de Gerenciamento de Estoque",
   "short_name": "Estoque App",
-  "start_url": "index.html",
+  "start_url": "index.php",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
