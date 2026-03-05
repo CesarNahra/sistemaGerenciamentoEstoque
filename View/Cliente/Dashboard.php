@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Painel do Cliente</title>
     <link rel="stylesheet" href="../View/Assets/style.css">
+    <link rel="manifest" href="../manifest.json">
     <style>
         /* --- CSS Específico para o Menu em Grid --- */
         .menu-grid {
@@ -109,5 +110,15 @@
             </a>
         </div>
     </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                .then(reg => console.log('Service Worker registered!', reg))
+                .catch(err => console.error('Error to register:', err));
+            });
+        }
+    </script>
 </body>
 </html>
