@@ -3,6 +3,7 @@
 <head>
     <title>Configurações</title>
     <link rel="stylesheet" href="../View/Assets/style.css">
+    <link rel="manifest" href="../manifest.json">
 </head>
 <body class="<?= isset($_SESSION['tema']) && $_SESSION['tema'] == 'dark' ? 'dark-mode' : '' ?>">
 

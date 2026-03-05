@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Editar Produto</title>
     <link rel="stylesheet" href="../View/Assets/style.css">
+    <link rel="manifest" href="../manifest.json">
 </head>
 <body>
     <nav>

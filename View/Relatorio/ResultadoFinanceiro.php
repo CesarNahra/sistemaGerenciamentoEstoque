@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Relatório Financeiro de Estoque</title>
     <link rel="stylesheet" href="../View/Assets/style.css">
+    <link rel="manifest" href="../manifest.json">
     
     <style>
         /* Estilos específicos para este relatório */

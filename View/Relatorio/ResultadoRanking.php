@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Ranking de Produtos</title>
     <link rel="stylesheet" href="../View/Assets/style.css">
+    <link rel="manifest" href="../manifest.json">
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

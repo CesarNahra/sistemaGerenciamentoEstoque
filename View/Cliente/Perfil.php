@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Perfil do Cliente</title>
     <link rel="stylesheet" href="../View/Assets/style.css">
+    <link rel="manifest" href="../manifest.json">
 </head>
 <body>
 
@@ -41,12 +42,6 @@
 
         <button class="btn btn-editar" onclick="window.location.href='../Controller/ClienteController.php?acao=editar'">
             Editar Perfil
-        </button>
-
-        <button class="btn btn-excluir" onclick="if(confirm('Tem certeza que deseja excluir sua conta?')) {
-                window.location.href='../Controller/ClienteController.php?acao=excluirPerfil';
-            }">
-            Excluir Conta
         </button>
     </div>
 
