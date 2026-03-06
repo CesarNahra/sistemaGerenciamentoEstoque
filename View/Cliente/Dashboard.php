@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Painel do Cliente</title>
-    <link rel="stylesheet" href="../View/Assets/style.css">
-    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="/sistemaGerenciamentoEstoque/View/Assets/style.css">
+    <link rel="manifest" href="/sistemaGerenciamentoEstoque/manifest.json">
     <style>
         /* --- CSS Específico para o Menu em Grid --- */
         .menu-grid {
@@ -67,10 +67,10 @@
             <span class="company-name">🏢 <?php echo $_SESSION['nome']; ?></span>
         </div>
         <div class="nav-links">
-            <a href="ClienteController.php?acao=dashboard">🏠 Início</a>
+            <a href="/sistemaGerenciamentoEstoque/dashboard">🏠 Início</a>
         </div>
         <div class="nav-logout">
-            <a href="AutenticaController.php?acao=logout" class="btn-logout">🚪 Sair</a>
+            <a href="/sistemaGerenciamentoEstoque/logout" class="btn-logout">🚪 Sair</a>
         </div>
     </nav>
 
@@ -79,32 +79,32 @@
         <p style="text-align: center; color: #666;">Selecione uma opção abaixo:</p>
 
         <div class="menu-grid">
-            <a href="../Controller/ProdutoController.php?acao=listarProdutos" class="menu-card">
+            <a href="/sistemaGerenciamentoEstoque/produtos" class="menu-card">
                 <div class="menu-icon">📦</div>
                 <div class="menu-title">Produtos</div>
             </a>
 
-            <a href="../Controller/CategoriaController.php?acao=listarCategorias" class="menu-card">
+            <a href="/sistemaGerenciamentoEstoque/categorias" class="menu-card">
                 <div class="menu-icon">🏷️</div>
                 <div class="menu-title">Categorias</div>
             </a>
 
-            <a href="../Controller/FornecedorController.php?acao=listarFornecedores" class="menu-card">
+            <a href="/sistemaGerenciamentoEstoque/fornecedores" class="menu-card">
                 <div class="menu-icon">🚛</div>
                 <div class="menu-title">Fornecedores</div>
             </a>
 
-            <a href="../Controller/RelatorioController.php?acao=prepararMenu" class="menu-card">
+            <a href="/sistemaGerenciamentoEstoque/relatorios" class="menu-card">
                 <div class="menu-icon">📊</div>
                 <div class="menu-title">Relatórios</div>
             </a>
 
-            <a href="../Controller/ClienteController.php?acao=perfil" class="menu-card" style="opacity: 0.7;">
+            <a href="/sistemaGerenciamentoEstoque/perfil" class="menu-card" style="opacity: 0.7;">
                 <div class="menu-icon">👤</div>
                 <div class="menu-title">Meu Perfil</div>
             </a>
 
-            <a href="../Controller/ClienteController.php?acao=configuracoes" class="menu-card" style="opacity: 0.7;">
+            <a href="/sistemaGerenciamentoEstoque/configuracoes" class="menu-card" style="opacity: 0.7;">
                 <div class="menu-icon">⚙️</div>
                 <div class="menu-title">Configurações</div>
             </a>

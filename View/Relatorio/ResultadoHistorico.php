@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Relatório de Histórico</title>
-    <link rel="stylesheet" href="../View/Assets/style.css">
-    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="/sistemaGerenciamentoEstoque/View/Assets/style.css">
+    <link rel="manifest" href="/sistemaGerenciamentoEstoque/manifest.json">
     
     <style>
         @media print {
@@ -19,13 +19,13 @@
             <span class="company-name">🏢 <?php echo $_SESSION['nome']; ?></span>
         </div>
         <div class="nav-links">
-            <a href="ClienteController.php?acao=dashboard">🏠 Menu</a>
-            <a href="ProdutoController.php?acao=listarProdutos">📦 Produtos</a>
-            <a href="FornecedorController.php?acao=listarFornecedores">🚛 Fornecedores</a>
-            <a href="CategoriaController.php?acao=listarCategorias">🏷️ Categorias</a>
+            <a href="/sistemaGerenciamentoEstoque/dashboard">🏠 Menu</a>
+            <a href="/sistemaGerenciamentoEstoque/produtos">📦 Produtos</a>
+            <a href="/sistemaGerenciamentoEstoque/fornecedores">🚛 Fornecedores</a>
+            <a href="/sistemaGerenciamentoEstoque/categorias">🏷️ Categorias</a>
         </div>
         <div class="nav-logout">
-            <a href="AutenticaController.php?acao=logout" class="btn-logout">🚪 Sair</a>
+            <a href="/sistemaGerenciamentoEstoque/logout" class="btn-logout">🚪 Sair</a>
         </div>
     </nav>
     
@@ -66,7 +66,7 @@
         </table>
 
         <br>
-        <a href="RelatorioController.php?acao=prepararMenu" class="btn no-print" style="background-color: gray;">Voltar</a>
+        <a href="/sistemaGerenciamentoEstoque/relatorios/menu" class="btn no-print" style="background-color: gray;">Voltar</a>
     </div>
 </body>
 </html>

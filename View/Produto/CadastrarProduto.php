@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Novo Produto</title>
-    <link rel="stylesheet" href="../View/Assets/style.css">
-    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="/sistemaGerenciamentoEstoque/View/Assets/style.css">
+    <link rel="manifest" href="/sistemaGerenciamentoEstoque/manifest.json">
 </head>
 <body>
     <nav>
@@ -12,20 +12,20 @@
             <span class="company-name">🏢 <?php echo $_SESSION['nome']; ?></span>
         </div>
         <div class="nav-links">
-            <a href="ClienteController.php?acao=dashboard">🏠 Menu</a>
-            <a href="ProdutoController.php?acao=listarProdutos">📦 Produtos</a>
-            <a href="FornecedorController.php?acao=listarFornecedores">🚛 Fornecedores</a>
-            <a href="CategoriaController.php?acao=listarCategorias">🏷️ Categorias</a>
+            <a href="/sistemaGerenciamentoEstoque/dashboard">🏠 Menu</a>
+            <a href="/sistemaGerenciamentoEstoque/produtos">📦 Produtos</a>
+            <a href="/sistemaGerenciamentoEstoque/fornecedores">🚛 Fornecedores</a>
+            <a href="/sistemaGerenciamentoEstoque/categorias">🏷️ Categorias</a>
         </div>
         <div class="nav-logout">
-            <a href="AutenticaController.php?acao=logout" class="btn-logout">🚪 Sair</a>
+            <a href="/sistemaGerenciamentoEstoque/logout" class="btn-logout">🚪 Sair</a>
         </div>
     </nav>
 
     <div class="container">
         <h1>Cadastrar Novo Produto</h1>
 
-        <form action="ProdutoController.php" method="POST">
+        <form action="/sistemaGerenciamentoEstoque/produtos/cadastro" method="POST">
             <fieldset>
                 <legend>Dados Principais</legend>
                 
@@ -64,7 +64,7 @@
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <small><a href="CategoriaController.php?acao=listarCategorias" class="gerencia">Gerenciar Categorias</a></small>
+                <small><a href="/sistemaGerenciamentoEstoque/categorias" class="gerencia">Gerenciar Categorias</a></small>
                 <br><br>
 
                 <label>Fornecedor:</label>
@@ -76,13 +76,11 @@
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <small><a href="FornecedorController.php?acao=listarFornecedores" class="gerencia">Gerenciar Fornecedores</a></small>
+                <small><a href="/sistemaGerenciamentoEstoque/fornecedores" class="gerencia">Gerenciar Fornecedores</a></small>
             </fieldset>
 
-            <input type="hidden" name="acao" value="salvarProduto">
-            <br>
             <button type="submit" class="btn">Salvar Produto</button>
-            <a href="ProdutoController.php?acao=listarProdutos" class="btn-link" style="background-color: #6c757d;">Cancelar</a>
+            <a href="/sistemaGerenciamentoEstoque/produtos" class="btn-link" style="background-color: #6c757d;">Cancelar</a>
         </form>
     </div>
 </body>

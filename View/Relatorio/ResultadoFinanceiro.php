@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Relatório Financeiro de Estoque</title>
-    <link rel="stylesheet" href="../View/Assets/style.css">
-    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="/sistemaGerenciamentoEstoque/View/Assets/style.css">
+    <link rel="manifest" href="/sistemaGerenciamentoEstoque/manifest.json">
     
     <style>
         /* Estilos específicos para este relatório */
@@ -57,10 +57,10 @@
             <span class="company-name">🏢 <?php echo $_SESSION['nome']; ?></span>
         </div>
         <div class="nav-links">
-            <a href="RelatorioController.php?acao=menu">⬅ Voltar ao Menu</a>
+            <a href="/sistemaGerenciamentoEstoque/relatorios/menu">⬅ Voltar ao Menu</a>
         </div>
         <div class="nav-logout">
-            <a href="AutenticaController.php?acao=logout" class="btn-logout">🚪 Sair</a>
+            <a href="/sistemaGerenciamentoEstoque/logout" class="btn-logout">🚪 Sair</a>
         </div>
     </nav>
 
@@ -103,7 +103,7 @@
         </div>
         
         <div class="no-print" style="margin-top: 30px;">
-            <a href="RelatorioController.php?acao=menu" class="btn" style="background-color: #6c757d;">Voltar</a>
+            <a href="/sistemaGerenciamentoEstoque/relatorios/menu" class="btn" style="background-color: #6c757d;">Voltar</a>
         </div>
     </div>
 </body>

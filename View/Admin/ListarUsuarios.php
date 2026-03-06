@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Painel Administrativo</title>
-    <link rel="stylesheet" href="../View/Assets/style.css">
-    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="/sistemaGerenciamentoEstoque/View/Assets/style.css">
+    <link rel="manifest" href="/sistemaGerenciamentoEstoque/manifest.json">
 </head>
 <body>
     <nav>
@@ -17,7 +17,7 @@
         </div>
 
         <div class="nav-logout">
-            <a href="AutenticaController.php?acao=logout" class="btn-logout">🚪 Sair</a>
+            <a href="/sistemaGerenciamentoEstoque/logout" class="btn-logout">🚪 Sair</a>
         </div>
     </nav>
 
@@ -54,7 +54,7 @@
                                 ?>
                             </td>
                             <td>
-                                <a href="AdminController.php?acao=excluirUsuario&id=<?php echo $user['id']; ?>" 
+                                <a href="/sistemaGerenciamentoEstoque/admin/excluir&id=<?php echo $user['id']; ?>" 
                                    onclick="return confirm('Tem certeza que deseja excluir este usuário? Todos os dados dele (produtos, fornecedores) serão apagados!')" 
                                    style="color: red; font-weight: bold;">
                                    [Excluir Conta]

@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Configurações</title>
-    <link rel="stylesheet" href="../View/Assets/style.css">
-    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="/sistemaGerenciamentoEstoque/View/Assets/style.css">
+    <link rel="manifest" href="/sistemaGerenciamentoEstoque/manifest.json">
 </head>
 <body class="<?= isset($_SESSION['tema']) && $_SESSION['tema'] == 'dark' ? 'dark-mode' : '' ?>">
 
@@ -12,21 +12,20 @@
             <span class="company-name">🏢 <?php echo $_SESSION['nome']; ?></span>
         </div>
         <div class="nav-links">
-            <a href="ClienteController.php?acao=dashboard">🏠 Menu</a>
-            <a href="ProdutoController.php?acao=listarProdutos">📦 Produtos</a>
-            <a href="FornecedorController.php?acao=listarFornecedores">🚛 Fornecedores</a>
-            <a href="CategoriaController.php?acao=listarCategorias">🏷️ Categorias</a>
+            <a href="/sistemaGerenciamentoEstoque/dashboard">🏠 Menu</a>
+            <a href="/sistemaGerenciamentoEstoque/produtos">📦 Produtos</a>
+            <a href="/sistemaGerenciamentoEstoque/fornecedores">🚛 Fornecedores</a>
+            <a href="/sistemaGerenciamentoEstoque/categorias">🏷️ Categorias</a>
         </div>
         <div class="nav-logout">
-            <a href="AutenticaController.php?acao=logout" class="btn-logout">🚪 Sair</a>
+            <a href="/sistemaGerenciamentoEstoque/logout" class="btn-logout">🚪 Sair</a>
         </div>
     </nav>
 
     <div class="container">
         <h2>Configurações</h2>
 
-        <form method="POST" action="../Controller/ClienteController.php?acao=alterarTema">
-            
+        <form method="POST" action="/sistemaGerenciamentoEstoque/perfil/alterar-tema">
             <label class="switch">
                 <input type="checkbox" name="tema" value="dark"
                     <?= ($_SESSION['tema'] ?? 'light') === 'dark' ? 'checked' : '' ?>
@@ -36,7 +35,7 @@
         </form>
 
         <br>
-        <a class="btn btn-voltar" href="../Controller/ClienteController.php?acao=dashboard">
+        <a class="btn btn-voltar" href="/sistemaGerenciamentoEstoque/perfil/dashboard">
             Voltar para o Dashboard
         </a>
     </div>

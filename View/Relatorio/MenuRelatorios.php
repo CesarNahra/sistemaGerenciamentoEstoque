@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Relatórios</title>
-    <link rel="stylesheet" href="../View/Assets/style.css">
-    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="/sistemaGerenciamentoEstoque/View/Assets/style.css">
+    <link rel="manifest" href="/sistemaGerenciamentoEstoque/manifest.json">
 </head>
 <body>
     <nav>
@@ -12,13 +12,13 @@
             <span class="company-name">🏢 <?php echo $_SESSION['nome']; ?></span>
         </div>
         <div class="nav-links">
-            <a href="ClienteController.php?acao=dashboard">🏠 Menu</a>
-            <a href="ProdutoController.php?acao=listarProdutos">📦 Produtos</a>
-            <a href="FornecedorController.php?acao=listarFornecedores">🚛 Fornecedores</a>
-            <a href="CategoriaController.php?acao=listarCategorias">🏷️ Categorias</a>
+            <a href="/sistemaGerenciamentoEstoque/dashboard">🏠 Menu</a>
+            <a href="/sistemaGerenciamentoEstoque/produtos">📦 Produtos</a>
+            <a href="/sistemaGerenciamentoEstoque/fornecedores">🚛 Fornecedores</a>
+            <a href="/sistemaGerenciamentoEstoque/categorias">🏷️ Categorias</a>
         </div>
         <div class="nav-logout">
-            <a href="AutenticaController.php?acao=logout" class="btn-logout">🚪 Sair</a>
+            <a href="/sistemaGerenciamentoEstoque/logout" class="btn-logout">🚪 Sair</a>
         </div>
     </nav>
     <div class="container">
@@ -31,13 +31,12 @@
                 <br>
                 <p>Veja o valor total acumulado e a quantidade de itens.</p>
                 <br>
-                <a href="RelatorioController.php?acao=gerarTotalEstoque" class="btn">Visualizar</a>
+                <a href="/sistemaGerenciamentoEstoque/relatorios/estoque-total" class="btn">Visualizar</a>
             </div>
 
             <div class="card" style="border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
                 <h3>📅 Histórico de Movimentações</h3>
-                <form action="RelatorioController.php" method="POST">
-                    <input type="hidden" name="acao" value="gerarHistorico">
+                <form action="/sistemaGerenciamentoEstoque/relatorios/historico" method="POST">
                     
                     <label>De:</label>
                     <input type="date" name="data_inicio" required>
@@ -51,8 +50,7 @@
 
             <div class="card" style="border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
                 <h3>🏆 Produtos Mais Movimentados</h3>
-                <form action="RelatorioController.php" method="POST">
-                    <input type="hidden" name="acao" value="gerarMaisMovimentados">
+                <form action="/sistemaGerenciamentoEstoque/relatorios/mais-movimentados" method="POST">
                     
                     <label>Tipo de Movimento:</label>
                     <select name="tipo" required style="width: 100%; margin-bottom: 10px; padding: 8px;">
@@ -64,7 +62,7 @@
                 </form>
             </div>
 
-            <button class="btn btn-voltar" onclick="window.location.href='../Controller/ClienteController.php?acao=dashboard'">
+            <button class="btn btn-voltar" onclick="window.location.href='/sistemaGerenciamentoEstoque/dashboard'">
                 Voltar ao Dashboard
             </button>
         </div>

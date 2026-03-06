@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Listar Categorias</title>
-    <link rel="stylesheet" href="../View/Assets/style.css">
-    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="/sistemaGerenciamentoEstoque/View/Assets/style.css">
+    <link rel="manifest" href="/sistemaGerenciamentoEstoque/manifest.json">
 </head>
 <body>
     <nav>
@@ -12,13 +12,13 @@
             <span class="company-name">🏢 <?php echo $_SESSION['nome']; ?></span>
         </div>
         <div class="nav-links">
-            <a href="ClienteController.php?acao=dashboard">🏠 Menu</a>
-            <a href="ProdutoController.php?acao=listarProdutos">📦 Produtos</a>
-            <a href="FornecedorController.php?acao=listarFornecedores">🚛 Fornecedores</a>
-            <a href="CategoriaController.php?acao=listarCategorias">🏷️ Categorias</a>
+            <a href="/sistemaGerenciamentoEstoque/dashboard">🏠 Menu</a>
+            <a href="/sistemaGerenciamentoEstoque/produtos">📦 Produtos</a>
+            <a href="/sistemaGerenciamentoEstoque/fornecedores">🚛 Fornecedores</a>
+            <a href="/sistemaGerenciamentoEstoque/categorias">🏷️ Categorias</a>
         </div>
         <div class="nav-logout">
-            <a href="AutenticaController.php?acao=logout" class="btn-logout">🚪 Sair</a>
+            <a href="/sistemaGerenciamentoEstoque/logout" class="btn-logout">🚪 Sair</a>
         </div>
     </nav>
     
@@ -26,7 +26,7 @@
         <h1>Categorias</h1>
 
         <div style="margin-bottom: 20px;">
-            <a href="CategoriaController.php?acao=prepararCadastroCategoria" class="btn">
+            <a href="/sistemaGerenciamentoEstoque/categorias/cadastro" class="btn">
                 + Nova Categoria
             </a>
         </div>
@@ -46,10 +46,10 @@
                             <td style="width: 10%;"><?php echo $cat['id']; ?></td>
                             <td><?php echo $cat['nome']; ?></td>
                             <td style="width: 20%;">
-                                <a href="CategoriaController.php?acao=prepararEdicaoCategoria&id_categoria=<?php echo $cat['id']; ?>"
+                                <a href="/sistemaGerenciamentoEstoque/categorias/editar&id_categoria=<?php echo $cat['id']; ?>"
                                    class="btn-acao btn-editar">Editar</a>
                                 
-                                <a href="CategoriaController.php?acao=excluirCategoria&id_categoria=<?php echo $cat['id']; ?>" 
+                                <a href="/sistemaGerenciamentoEstoque/categorias/excluir&id_categoria=<?php echo $cat['id']; ?>" 
                                    onclick="return confirm('Tem certeza?')" 
                                    class="btn-acao btn-excluir">Excluir</a>
                             </td>
@@ -61,7 +61,7 @@
             </tbody>
         </table>
 
-        <button class="btn btn-voltar" onclick="window.location.href='../Controller/ClienteController.php?acao=dashboard'">
+        <button class="btn btn-voltar" onclick="window.location.href='/sistemaGerenciamentoEstoque/dashboard'">
             Voltar ao Dashboard
         </button>
     </div>

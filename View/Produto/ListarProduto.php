@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Estoque - Produtos</title>
-    <link rel="stylesheet" href="../View/Assets/style.css">
-    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="/sistemaGerenciamentoEstoque/View/Assets/style.css">
+    <link rel="manifest" href="/sistemaGerenciamentoEstoque/manifest.json">
 </head>
 <body>
     <nav>
@@ -12,20 +12,20 @@
             <span class="company-name">🏢 <?php echo $_SESSION['nome']; ?></span>
         </div>
         <div class="nav-links">
-            <a href="ClienteController.php?acao=dashboard">🏠 Menu</a>
-            <a href="ProdutoController.php?acao=listarProdutos">📦 Produtos</a>
-            <a href="FornecedorController.php?acao=listarFornecedores">🚛 Fornecedores</a>
-            <a href="CategoriaController.php?acao=listarCategorias">🏷️ Categorias</a>
+            <a href="/sistemaGerenciamentoEstoque/dashboard">🏠 Menu</a>
+            <a href="/sistemaGerenciamentoEstoque/produtos">📦 Produtos</a>
+            <a href="/sistemaGerenciamentoEstoque/fornecedores">🚛 Fornecedores</a>
+            <a href="/sistemaGerenciamentoEstoque/categorias">🏷️ Categorias</a>
         </div>
         <div class="nav-logout">
-            <a href="AutenticaController.php?acao=logout" class="btn-logout">🚪 Sair</a>
+            <a href="/sistemaGerenciamentoEstoque/logout" class="btn-logout">🚪 Sair</a>
         </div>
     </nav>
 
     <div class="container">
         <h1>Gerenciamento de Estoque</h1>
         
-        <a href="ProdutoController.php?acao=prepararCadastro" class="btn">
+        <a href="/sistemaGerenciamentoEstoque/produtos/cadastro" class="btn">
             + Novo Produto
         </a>
 
@@ -82,9 +82,9 @@
                             </td>
 
                             <td>
-                                <a href="ProdutoController.php?acao=prepararEdicaoProduto&id_produto=<?php echo $prod['id']; ?>" 
+                                <a href="/sistemaGerenciamentoEstoque/produtos/editar&id_produto=<?php echo $prod['id']; ?>" 
                                  class="btn-acao btn-editar">Editar</a>
-                                <a href="ProdutoController.php?acao=excluirProduto&id_produto=<?php echo $prod['id']; ?>" 
+                                <a href="/sistemaGerenciamentoEstoque/produtos/excluir&id_produto=<?php echo $prod['id']; ?>" 
                                    onclick="return confirm('Tem certeza que deseja excluir?')" 
                                  class="btn-acao btn-excluir">Excluir</a>
                             </td>
@@ -98,7 +98,7 @@
             </tbody>
         </table>
 
-        <button class="btn btn-voltar" onclick="window.location.href='../Controller/ClienteController.php?acao=dashboard'">
+        <button class="btn btn-voltar" onclick="window.location.href='/sistemaGerenciamentoEstoque/dashboard'">
             Voltar ao Dashboard
         </button>
     </div>
