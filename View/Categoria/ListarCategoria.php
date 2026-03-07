@@ -49,7 +49,7 @@
                                 <a href="/sistemaGerenciamentoEstoque/categorias/editar&id_categoria=<?php echo $cat['id']; ?>"
                                    class="btn-acao btn-editar">Editar</a>
                                 
-                                <a href="/sistemaGerenciamentoEstoque/categorias/excluir&id_categoria=<?php echo $cat['id']; ?>" 
+                                <a href="/sistemaGerenciamentoEstoque/categorias/excluir?id_categoria=<?php echo $cat['id']; ?>" 
                                    onclick="return confirm('Tem certeza?')" 
                                    class="btn-acao btn-excluir">Excluir</a>
                             </td>

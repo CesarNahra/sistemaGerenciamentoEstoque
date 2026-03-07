@@ -48,10 +48,10 @@
                             <td><?php echo $forn['cnpj']; ?></td>
                             <td><?php echo $forn['email']; ?></td>
                             <td>
-                                <a href="/sistemaGerenciamentoEstoque/fornecedores/editar&id_fornecedor=<?php echo $forn['id']; ?>"
+                                <a href="/sistemaGerenciamentoEstoque/fornecedores/editar?id_fornecedor=<?php echo $forn['id']; ?>"
                                    class="btn-acao btn-editar">Editar</a>
                                 
-                                <a href="/sistemaGerenciamentoEstoque/fornecedores/excluir&id_fornecedor=<?php echo $forn['id']; ?>" 
+                                <a href="/sistemaGerenciamentoEstoque/fornecedores/excluir?id_fornecedor=<?php echo $forn['id']; ?>" 
                                    onclick="return confirm('Tem certeza?')" 
                                    class="btn-acao btn-excluir">Excluir</a>
                             </td>

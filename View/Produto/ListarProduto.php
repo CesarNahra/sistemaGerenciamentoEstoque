@@ -82,9 +82,9 @@
                             </td>
 
                             <td>
-                                <a href="/sistemaGerenciamentoEstoque/produtos/editar&id_produto=<?php echo $prod['id']; ?>" 
+                                <a href="/sistemaGerenciamentoEstoque/produtos/editar?id_produto=<?php echo $prod['id']; ?>" 
                                  class="btn-acao btn-editar">Editar</a>
-                                <a href="/sistemaGerenciamentoEstoque/produtos/excluir&id_produto=<?php echo $prod['id']; ?>" 
+                                <a href="/sistemaGerenciamentoEstoque/produtos/excluir?id_produto=<?php echo $prod['id']; ?>" 
                                    onclick="return confirm('Tem certeza que deseja excluir?')" 
                                  class="btn-acao btn-excluir">Excluir</a>
                             </td>
