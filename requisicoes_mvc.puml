@@ -1,0 +1,180 @@
+@startuml Diagrama de Sequência - Requisições MVC
+hide footbox
+
+actor ClienteWeb
+actor ClienteMobile
+
+control AdminController
+control AutenticaController
+control CategoriaController
+control ClienteController
+control FornecedorController
+control ProdutoController
+control RelatorioController
+
+entity Admin
+entity Categoria
+entity Cliente
+entity Fornecedor
+entity Movimentacao
+entity Produto
+entity Relatorio
+entity Usuario
+
+database phpmyadmin
+
+ClienteWeb -> AutenticaController: POST /logar
+AutenticaController -> AdminController: logar()
+AdminController -> AutenticaController: jsonUsuario
+AutenticaController --> AdminController: jsonUsuario
+AdminController -> phpmyadmin: listar()
+phpmyadmin --> Admin
+Admin --> AdminController
+AdminController --> ClienteWeb
+
+ClienteWeb -> AdminController: POST /admin/excluir
+AdminController -> phpmyadmin: excluir()
+phpmyadmin --> Admin: jsonUsuario{id}
+Admin --> AdminController: jsonUsuario{id}
+AdminController --> ClienteWeb: jsonUsuario{id}
+
+ClienteWeb -> AutenticaController: POST /logar
+AutenticaController -> phpmyadmin: logar()
+phpmyadmin --> Cliente: jsonUsuario
+Cliente --> AutenticaController: jsonUsuario
+AutenticaController --> ClienteWeb: jsonUsuario
+
+ClienteWeb -> AutenticaController: POST /logout
+AutenticaController -> phpmyadmin: logout()
+phpmyadmin --> Cliente: jsonUsuario
+Cliente --> AutenticaController: jsonUsuario
+AutenticaController --> ClienteWeb: jsonUsuario
+
+ClienteWeb -> CategoriaController: GET /categorias
+CategoriaController -> phpmyadmin: listarCategorias()
+phpmyadmin --> Categoria: jsonCategorias
+Categoria --> CategoriaController: jsonCategorias
+CategoriaController --> ClienteWeb: jsonCategorias
+
+ClienteWeb -> CategoriaController: GET /categorias/cadastro
+CategoriaController -> phpmyadmin: prepararCadastroCategoria()
+phpmyadmin --> Categoria
+Categoria --> CategoriaController
+CategoriaController --> ClienteWeb
+
+ClienteWeb -> CategoriaController: POST /categorias/salvar{id}
+CategoriaController -> phpmyadmin: salvarCategoria()
+phpmyadmin --> Categoria: jsonCategoria{id}
+Categoria --> CategoriaController: jsonCategoria{id}
+CategoriaController --> ClienteWeb: jsonCategoria{id}
+
+ClienteWeb -> CategoriaController: GET /categorias/atualizar&{id}
+CategoriaController -> phpmyadmin: prepararEdicaoCategoria()
+phpmyadmin --> Categoria: jsonCategoria{id}
+Categoria --> CategoriaController: jsonCategoria{id}
+CategoriaController --> ClienteWeb: jsonCategoria{id}
+
+ClienteWeb -> CategoriaController: DELETE /categorias/excluir&{id}
+CategoriaController -> phpmyadmin: excluirCategoria()
+phpmyadmin --> Categoria: jsonCategoria{id}
+Categoria --> CategoriaController: jsonCategoria{id}
+CategoriaController --> ClienteWeb: jsonCategoria{id}
+
+ClienteWeb -> ProdutoController: GET /produtos
+ProdutoController -> phpmyadmin: listarProdutos()
+phpmyadmin --> Produto: jsonProdutos
+Produto --> ProdutoController: jsonProdutos
+ProdutoController --> ClienteWeb: jsonProdutos
+
+ClienteWeb -> ProdutoController: GET /produtos/cadastro
+ProdutoController -> phpmyadmin: prepararCadastro()
+phpmyadmin --> Produto
+Produto --> ProdutoController
+ProdutoController --> ClienteWeb
+
+ClienteWeb -> ProdutoController: GET /produtos/editar
+ProdutoController -> phpmyadmin: prepararEdicaoProduto()
+phpmyadmin --> Produto: jsonProdutos
+Produto --> ProdutoController: jsonProdutos
+ProdutoController --> ClienteWeb: jsonProdutos
+
+ClienteWeb -> ProdutoController: GET /produtos/atualizar&{id}
+ProdutoController -> phpmyadmin: atualizarProduto()
+phpmyadmin --> Produto: jsonProduto{id}
+Produto --> ProdutoController: jsonProduto{id}
+ProdutoController --> ClienteWeb: jsonProduto{id}
+
+ClienteWeb -> ProdutoController: PUT /produtos/salvar&{id}
+ProdutoController -> phpmyadmin: salvarProduto()
+phpmyadmin --> Produto: jsonProduto{id}
+Produto --> ProdutoController: jsonProduto{id}
+ProdutoController --> ClienteWeb: jsonProduto{id}
+
+ClienteWeb -> ProdutoController: POST /produtos/movimentar&{id}
+ProdutoController -> phpmyadmin: movimentar()
+phpmyadmin --> Produto: jsonProduto{id}
+Produto --> ProdutoController: jsonProduto{id}
+ProdutoController --> ClienteWeb: jsonProduto{id}
+
+ClienteWeb -> ProdutoController: DELETE /produtos/excluir&{id}
+ProdutoController -> phpmyadmin: excluirProduto()
+phpmyadmin --> Produto: jsonProduto{id}
+Produto --> ProdutoController: jsonProduto{id}
+ProdutoController --> ClienteWeb: jsonProduto{id}
+
+ClienteWeb -> FornecedorController: GET /fornecedores
+FornecedorController -> phpmyadmin: listarFornecedores()
+phpmyadmin --> Fornecedor: jsonFornecedores
+Fornecedor --> FornecedorController: jsonFornecedores
+FornecedorController --> ClienteWeb: jsonFornecedores
+
+ClienteWeb -> FornecedorController: GET /fornecedores/cadastro
+FornecedorController -> phpmyadmin: prepararCadastro()
+phpmyadmin --> Fornecedor
+Fornecedor --> FornecedorController
+FornecedorController --> ClienteWeb
+
+ClienteWeb -> FornecedorController: GET /fornecedores/editar
+FornecedorController -> phpmyadmin: prepararEdicaoFornecedor()
+phpmyadmin --> Fornecedor: jsonFornecedores
+Fornecedor --> FornecedorController: jsonFornecedores
+FornecedorController --> ClienteWeb: jsonFornecedores
+
+ClienteWeb -> FornecedorController: PUT /fornecedores/salvar&{id}
+FornecedorController -> phpmyadmin: salvarFornecedor()
+phpmyadmin --> Fornecedor: jsonFornecedores{id}
+Fornecedor --> FornecedorController: jsonFornecedores{id}
+FornecedorController --> ClienteWeb: jsonFornecedores{id}
+
+ClienteWeb -> FornecedorController: DELETE /fornecedores/excluir&{id}
+FornecedorController -> phpmyadmin: excluirFornecedor()
+phpmyadmin --> Fornecedor: jsonFornecedores{id}
+Fornecedor --> FornecedorController: jsonFornecedores{id}
+FornecedorController --> ClienteWeb: jsonFornecedores{id}
+
+ClienteWeb -> RelatorioController: GET /relatorios
+RelatorioController -> phpmyadmin: prepararMenu()
+phpmyadmin --> Relatorio: jsonRelatorios
+Relatorio --> RelatorioController: jsonRelatorios
+RelatorioController --> ClienteWeb: jsonRelatorios
+
+ClienteWeb -> RelatorioController: GET /relatorios/estoque-total
+RelatorioController -> phpmyadmin: gerarTotalEstoque()
+phpmyadmin --> Relatorio: jsonRelatorios
+Relatorio --> RelatorioController: jsonRelatorios
+RelatorioController --> ClienteWeb: jsonRelatorios
+
+ClienteWeb -> RelatorioController: GET /relatorios/historico
+RelatorioController -> phpmyadmin: gerarHistorico()
+phpmyadmin --> Relatorio: jsonRelatorios
+Relatorio --> RelatorioController: jsonRelatorios
+RelatorioController --> ClienteWeb: jsonRelatorios
+
+ClienteWeb -> RelatorioController: GET /relatorios/mais-movimentados
+RelatorioController -> phpmyadmin: gerarMaisMovimentados()
+phpmyadmin --> Relatorio: jsonRelatorios
+Relatorio --> RelatorioController: jsonRelatorios
+RelatorioController --> ClienteWeb: jsonRelatorios
+
+
+@enduml
