@@ -25,7 +25,7 @@
     <div class="container">
         <h1>Cadastrar Fornecedor</h1>
 
-        <form action="/sistemaGerenciamentoEstoque/fornecedores/cadastro" method="POST">
+        <form action="/sistemaGerenciamentoEstoque/fornecedores/salvar" method="POST">
             <fieldset>
                 <label>Nome da Empresa:</label>
                 <input type="text" name="nome_empresa" required>

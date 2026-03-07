@@ -25,7 +25,7 @@
     <div class="container">
         <h1>Cadastrar Novo Produto</h1>
 
-        <form action="/sistemaGerenciamentoEstoque/produtos/cadastro" method="POST">
+        <form action="/sistemaGerenciamentoEstoque/produtos/salvar" method="POST">
             <fieldset>
                 <legend>Dados Principais</legend>
                 

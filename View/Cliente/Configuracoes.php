@@ -35,7 +35,7 @@
         </form>
 
         <br>
-        <a class="btn btn-voltar" href="/sistemaGerenciamentoEstoque/perfil/dashboard">
+        <a class="btn btn-voltar" href="/sistemaGerenciamentoEstoque/dashboard">
             Voltar para o Dashboard
         </a>
     </div>
