@@ -176,5 +176,29 @@ phpmyadmin --> Relatorio: jsonRelatorios
 Relatorio --> RelatorioController: jsonRelatorios
 RelatorioController --> ClienteWeb: jsonRelatorios
 
+ClienteWeb -> ClienteController: GET /perfil
+ClienteController -> phpmyadmin: perfil()
+phpmyadmin --> Usuario: jsonUsuario
+Usuario --> ClienteController: jsonUsuario
+ClienteController --> ClienteWeb: jsonUsuario
+
+ClienteWeb -> ClienteController: PUT /perfil/editar
+ClienteController -> phpmyadmin: editar()
+phpmyadmin --> Usuario: jsonUsuario
+Usuario --> ClienteController: jsonUsuario
+ClienteController --> ClienteWeb: jsonUsuario
+
+ClienteWeb -> ClienteController: POST /perfil/atualizar
+ClienteController -> phpmyadmin: atualizarPerfil()
+phpmyadmin --> Usuario: jsonUsuario
+Usuario --> ClienteController: jsonUsuario
+ClienteController --> ClienteWeb: jsonUsuario
+
+ClienteWeb -> ClienteController: GET /configuracoes
+ClienteController -> phpmyadmin: configuracoes()
+phpmyadmin --> Usuario
+Usuario --> ClienteController
+ClienteController --> ClienteWeb
+
 
 @enduml
