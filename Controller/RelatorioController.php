@@ -1,17 +1,16 @@
 <?php
 require_once __DIR__ . '/../Model/Relatorio.php';
+session_start();
 
 class RelatorioController {
 
     public function prepararMenu(){
-        session_start();
         if(!isset($_SESSION['id'])){ header("Location: ../index.php"); exit(); }
         
         require_once __DIR__ . '/../View/Relatorio/MenuRelatorios.php';
     }
 
     public function gerarTotalEstoque(){
-        session_start();
         if(!isset($_SESSION['id'])){ header("Location: ../index.php"); exit(); }
 
         $relatorio = new Relatorio();
@@ -23,7 +22,6 @@ class RelatorioController {
     }
 
     public function gerarHistorico(){
-        session_start();
         if(!isset($_SESSION['id'])){ header("Location: ../index.php"); exit(); }
 
         $inicio = $_POST['data_inicio'];
@@ -37,7 +35,6 @@ class RelatorioController {
     }
 
     public function gerarMaisMovimentados(){
-        session_start();
         if(!isset($_SESSION['id'])){ header("Location: ../index.php"); exit(); }
 
         $tipo = $_POST['tipo']; 

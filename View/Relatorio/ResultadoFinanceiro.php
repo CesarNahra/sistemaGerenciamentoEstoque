@@ -57,7 +57,7 @@
             <span class="company-name">🏢 <?php echo $_SESSION['nome']; ?></span>
         </div>
         <div class="nav-links">
-            <a href="/sistemaGerenciamentoEstoque/relatorios/menu">⬅ Voltar ao Menu</a>
+            <a href="/sistemaGerenciamentoEstoque/dashboard">⬅ Voltar ao Menu</a>
         </div>
         <div class="nav-logout">
             <a href="/sistemaGerenciamentoEstoque/logout" class="btn-logout">🚪 Sair</a>
@@ -103,7 +103,7 @@
         </div>
         
         <div class="no-print" style="margin-top: 30px;">
-            <a href="/sistemaGerenciamentoEstoque/relatorios/menu" class="btn" style="background-color: #6c757d;">Voltar</a>
+            <a href="/sistemaGerenciamentoEstoque/relatorios" class="btn" style="background-color: #6c757d;">Voltar</a>
         </div>
     </div>
 </body>

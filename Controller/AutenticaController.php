@@ -1,6 +1,7 @@
 <?php
         require_once __DIR__ . "/../Model/Cliente.php";
         require_once __DIR__ . "/../Model/Administrador.php";
+        session_start();
 
         class AutenticaController {
 
@@ -13,7 +14,6 @@
                 $dadosUsuario = Usuario::verificaLogin($email, $senha);
 
                 if($dadosUsuario){
-                    session_start();
 
                     $_SESSION['id'] = $dadosUsuario['id'];
                     $_SESSION['nome'] = $dadosUsuario['nome'];
@@ -40,8 +40,6 @@
             }
 
             public function logout(){
-                session_start();
-                session_unset();
                 session_destroy();
                 header("Location: ../View/Login.php");
                 exit();

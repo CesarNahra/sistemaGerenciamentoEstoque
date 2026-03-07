@@ -1,10 +1,10 @@
 <?php
     require_once __DIR__ . '/../Model/Cliente.php';
+    session_start();
 
     class ClienteController {
 
         public function dashboard(){
-            session_start();
         
             if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 'cliente'){ 
                 header("Location: ../index.php"); 
@@ -16,7 +16,6 @@
 
         // Futuras implementações:
         public function perfil(){
-            session_start();
             if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 'cliente'){
                 header("Location: ../index.php");
                 exit();
@@ -25,7 +24,6 @@
         }
 
         public function editar(){
-            session_start();
 
             if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 'cliente'){
                 header("Location: ../index.php");
@@ -36,7 +34,6 @@
         }
 
         public function configuracoes(){
-            session_start();
 
             if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 'cliente'){
                 header("Location: ../index.php");
@@ -47,7 +44,6 @@
         }
 
         public function alterarTema(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -75,8 +71,6 @@
         }
 
         public function atualizarPerfil(){
-            session_start();
-
             if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 'cliente'){
                 header("Location: ../index.php");
                 exit();
@@ -99,7 +93,6 @@
         }
 
         public function excluirPerfil() {
-            session_start();
 
             if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 'cliente'){
                 header("Location: ../index.php");

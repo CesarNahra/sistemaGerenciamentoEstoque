@@ -25,7 +25,7 @@
     <div class="container">
         <h1>Editar Fornecedor</h1>
 
-        <form action="/sistemaGerenciamentoEstoque/fornecedores/editar" method="POST">
+        <form action="/sistemaGerenciamentoEstoque/fornecedores/salvar" method="POST">
             <fieldset>
                 <label>Nome da Empresa:</label>
                 <input type="text" name="nome_empresa" value="<?php echo $dadosFornecedor['nome_empresa']; ?>" required>

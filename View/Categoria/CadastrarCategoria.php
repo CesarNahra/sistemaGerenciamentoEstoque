@@ -25,7 +25,7 @@
     <div class="container">
         <h1>Cadastrar Nova Categoria</h1>
 
-        <form action="/sistemaGerenciamentoEstoque/salvar" method="POST">
+        <form action="/sistemaGerenciamentoEstoque/categorias/salvar" method="POST">
             <fieldset>
                 <label>Nome da Categoria:</label>
                 <input type="text" name="nome" required placeholder="Ex: Eletrônicos">

@@ -1,18 +1,17 @@
 <?php
     require_once __DIR__ . '/../Model/Categoria.php';
+    session_start();
 
     class CategoriaController {
 
         // Esse método irá apenas chamar a VIEW CADASTROCategoria
         public function prepararCadastroCategoria(){
-            session_start();
             if(!isset($_SESSION['id'])){ header("Location: ../index.php"); exit(); }
             
             require_once __DIR__ . '/../View/Categoria/CadastrarCategoria.php';
         }
 
         public function salvarCategoria(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -30,7 +29,6 @@
         }
 
         public function listarCategorias(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -44,7 +42,6 @@
         }
 
         public function excluirCategoria(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -62,7 +59,6 @@
         }
 
         public function prepararEdicaoCategoria(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -81,7 +77,6 @@
         }
 
         public function atualizarCategoria(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");

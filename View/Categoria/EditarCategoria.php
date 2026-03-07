@@ -25,7 +25,7 @@
     <div class="container">
         <h1>Editar Categoria</h1>
 
-        <form action="/sistemaGerenciamentoEstoque/categorias/editar" method="POST">
+        <form action="/sistemaGerenciamentoEstoque/categorias/salvar" method="POST">
             <fieldset>
                 <label>Nome da Categoria:</label>
                 <input type="text" name="nome" value="<?php echo $dadosCategoria['nome']; ?>" required>

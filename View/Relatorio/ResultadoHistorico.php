@@ -19,10 +19,7 @@
             <span class="company-name">🏢 <?php echo $_SESSION['nome']; ?></span>
         </div>
         <div class="nav-links">
-            <a href="/sistemaGerenciamentoEstoque/dashboard">🏠 Menu</a>
-            <a href="/sistemaGerenciamentoEstoque/produtos">📦 Produtos</a>
-            <a href="/sistemaGerenciamentoEstoque/fornecedores">🚛 Fornecedores</a>
-            <a href="/sistemaGerenciamentoEstoque/categorias">🏷️ Categorias</a>
+            <a href="/sistemaGerenciamentoEstoque/dashboard">⬅ Voltar ao Menu</a>
         </div>
         <div class="nav-logout">
             <a href="/sistemaGerenciamentoEstoque/logout" class="btn-logout">🚪 Sair</a>
@@ -66,7 +63,7 @@
         </table>
 
         <br>
-        <a href="/sistemaGerenciamentoEstoque/relatorios/menu" class="btn no-print" style="background-color: gray;">Voltar</a>
+        <a href="/sistemaGerenciamentoEstoque/relatorios" class="btn no-print" style="background-color: gray;">Voltar</a>
     </div>
 </body>
 </html>

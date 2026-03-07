@@ -114,7 +114,7 @@
         </table>
         
         <div class="no-print" style="margin-top: 30px;">
-            <a href="/sistemaGerenciamentoEstoque/relatorios/menu" class="btn" style="background-color: #6c757d;">Voltar</a>
+            <a href="/sistemaGerenciamentoEstoque/relatorios" class="btn" style="background-color: #6c757d;">Voltar</a>
         </div>
     </div>
 

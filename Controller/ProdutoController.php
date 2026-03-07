@@ -3,11 +3,11 @@
     require_once __DIR__ . '/../Model/Movimentacao.php';
     require_once __DIR__ . '/../Model/Categoria.php';
     require_once __DIR__ . '/../Model/Fornecedor.php';
+    session_start();
 
     class ProdutoController {
         
         public function listarProdutos(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -20,7 +20,6 @@
         }
 
         public function prepararCadastro(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -37,7 +36,6 @@
         }
 
         public function salvarProduto(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -86,7 +84,6 @@
         }
 
         public function excluirProduto(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -105,7 +102,6 @@
         }
 
         public function movimentar(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -159,7 +155,6 @@
         }
 
         public function prepararEdicaoProduto(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -183,7 +178,6 @@
         }
 
         public function atualizarProduto(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");

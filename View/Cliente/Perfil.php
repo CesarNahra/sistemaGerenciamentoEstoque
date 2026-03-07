@@ -36,7 +36,7 @@
             <?php echo $_SESSION['email']; ?>
         </div>
 
-        <button class="btn btn-voltar" onclick="window.location.href='/sistemaGerenciamentoEstoque/perfil/dashboard'">
+        <button class="btn btn-voltar" onclick="window.location.href='/sistemaGerenciamentoEstoque/dashboard'">
             Voltar ao Dashboard
         </button>
 

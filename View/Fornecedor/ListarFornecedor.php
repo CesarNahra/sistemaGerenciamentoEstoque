@@ -63,7 +63,7 @@
             </tbody>
         </table>
 
-        <button class="btn btn-voltar" onclick="window.location.href='/sistemaGerenciamentoEstoque/perfil/dashboard'">
+        <button class="btn btn-voltar" onclick="window.location.href='/sistemaGerenciamentoEstoque/dashboard'">
             Voltar ao Dashboard
         </button>
     </div>

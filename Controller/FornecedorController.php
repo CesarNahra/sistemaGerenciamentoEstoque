@@ -1,18 +1,17 @@
 <?php
     require_once __DIR__ . '/../Model/Fornecedor.php';
+    session_start();
 
     class FornecedorController {
         
         // Responsável por chamar a view de cadastro
         public function prepararCadastroFornecedor(){
-            session_start();
             if(!isset($_SESSION['id'])){ header("Location: ../index.php"); exit(); }
             
             require_once __DIR__ . '/../View/Fornecedor/CadastrarFornecedor.php';
         }
         
         public function listarFornecedores(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -26,7 +25,6 @@
         }
 
         public function salvarFornecedor(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -53,7 +51,6 @@
         }
 
         public function excluirFornecedor(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -71,7 +68,6 @@
         }
 
         public function prepararEdicaoFornecedor(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");
@@ -87,7 +83,6 @@
         }
 
         public function atualizarFornecedor(){
-            session_start();
 
             if(!isset($_SESSION['id'])){
                 header("Location: ../index.php");

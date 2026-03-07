@@ -1,10 +1,10 @@
 <?php 
     require_once __DIR__ . "/../Model/Administrador.php";
+    session_start();
 
     class AdminController {
 
         public function listarUsuarios(){
-            session_start();
 
             if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 'admin'){
                 header("Location: ../index.php");
@@ -19,7 +19,6 @@
         }
 
         public function excluirUsuario(){
-            session_start();
 
             if(!isset($_SESSION['id']) || $_SESSION['tipo'] != 'admin'){
                 header("Location: ../index.php");

@@ -33,7 +33,7 @@
         $controller = new CategoriaController();
         $controller->salvarCategoria();
         break;
-    case '/categorias/atualizar':
+    case '/categorias/editar':
         $controller = new CategoriaController();
         $controller->prepararEdicaoCategoria();
         break;
