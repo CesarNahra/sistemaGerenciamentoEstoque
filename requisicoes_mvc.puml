@@ -27,16 +27,22 @@ ClienteWeb -> AutenticaController: POST /logar
 AutenticaController -> AdminController: logar()
 AdminController -> AutenticaController: jsonUsuario
 AutenticaController --> AdminController: jsonUsuario
-AdminController -> phpmyadmin: listar()
+AdminController -> phpmyadmin: jsonUsuario
 phpmyadmin --> Admin
 Admin --> AdminController
 AdminController --> ClienteWeb
 
-ClienteWeb -> AdminController: POST /admin/excluir
+ClienteWeb -> AutenticaController: GET /listar
+AdminController -> phpmyadmin: listar()
+phpmyadmin --> Admin: jsonUsuario
+Admin --> AdminController: jsonUsuario
+AdminController --> ClienteWeb: jsonUsuario
+
+ClienteWeb -> AdminController: POST /admin/excluir{id_usuario}
 AdminController -> phpmyadmin: excluir()
-phpmyadmin --> Admin: jsonUsuario{id}
-Admin --> AdminController: jsonUsuario{id}
-AdminController --> ClienteWeb: jsonUsuario{id}
+phpmyadmin --> Admin: jsonUsuario{id_usuario}
+Admin --> AdminController: jsonUsuario{id_usuario}
+AdminController --> ClienteWeb: jsonUsuario{id_usuario}
 
 ClienteWeb -> AutenticaController: POST /logar
 AutenticaController -> phpmyadmin: logar()
@@ -62,23 +68,23 @@ phpmyadmin --> Categoria
 Categoria --> CategoriaController
 CategoriaController --> ClienteWeb
 
-ClienteWeb -> CategoriaController: POST /categorias/salvar{id}
+ClienteWeb -> CategoriaController: POST /categorias/salvar{id_categoria}
 CategoriaController -> phpmyadmin: salvarCategoria()
-phpmyadmin --> Categoria: jsonCategoria{id}
-Categoria --> CategoriaController: jsonCategoria{id}
-CategoriaController --> ClienteWeb: jsonCategoria{id}
+phpmyadmin --> Categoria: jsonCategoria{id_categoria}
+Categoria --> CategoriaController: jsonCategoria{id_categoria}
+CategoriaController --> ClienteWeb: jsonCategoria{id_categoria}
 
-ClienteWeb -> CategoriaController: GET /categorias/atualizar&{id}
+ClienteWeb -> CategoriaController: GET /categorias/atualizar&{id_categoria}
 CategoriaController -> phpmyadmin: prepararEdicaoCategoria()
-phpmyadmin --> Categoria: jsonCategoria{id}
-Categoria --> CategoriaController: jsonCategoria{id}
-CategoriaController --> ClienteWeb: jsonCategoria{id}
+phpmyadmin --> Categoria: jsonCategoria{id_categoria}
+Categoria --> CategoriaController: jsonCategoria{id_categoria}
+CategoriaController --> ClienteWeb: jsonCategoria{id_categoria}
 
-ClienteWeb -> CategoriaController: DELETE /categorias/excluir&{id}
+ClienteWeb -> CategoriaController: DELETE /categorias/excluir&{id_categoria}
 CategoriaController -> phpmyadmin: excluirCategoria()
-phpmyadmin --> Categoria: jsonCategoria{id}
-Categoria --> CategoriaController: jsonCategoria{id}
-CategoriaController --> ClienteWeb: jsonCategoria{id}
+phpmyadmin --> Categoria: jsonCategoria{id_categoria}
+Categoria --> CategoriaController: jsonCategoria{id_categoria}
+CategoriaController --> ClienteWeb: jsonCategoria{id_categoria}
 
 ClienteWeb -> ProdutoController: GET /produtos
 ProdutoController -> phpmyadmin: listarProdutos()
@@ -92,11 +98,11 @@ phpmyadmin --> Produto
 Produto --> ProdutoController
 ProdutoController --> ClienteWeb
 
-ClienteWeb -> ProdutoController: GET /produtos/editar
+ClienteWeb -> ProdutoController: GET /produtos/editar&{id_produto}
 ProdutoController -> phpmyadmin: prepararEdicaoProduto()
-phpmyadmin --> Produto: jsonProdutos
-Produto --> ProdutoController: jsonProdutos
-ProdutoController --> ClienteWeb: jsonProdutos
+phpmyadmin --> Produto: jsonProduto{id_produto}
+Produto --> ProdutoController: jsonProduto{id_produto}
+ProdutoController --> ClienteWeb: jsonProduto{id_produto}
 
 ClienteWeb -> ProdutoController: GET /produtos/atualizar&{id}
 ProdutoController -> phpmyadmin: atualizarProduto()
@@ -104,23 +110,23 @@ phpmyadmin --> Produto: jsonProduto{id}
 Produto --> ProdutoController: jsonProduto{id}
 ProdutoController --> ClienteWeb: jsonProduto{id}
 
-ClienteWeb -> ProdutoController: PUT /produtos/salvar&{id}
+ClienteWeb -> ProdutoController: PUT /produtos/salvar&{id_produto}
 ProdutoController -> phpmyadmin: salvarProduto()
-phpmyadmin --> Produto: jsonProduto{id}
-Produto --> ProdutoController: jsonProduto{id}
-ProdutoController --> ClienteWeb: jsonProduto{id}
+phpmyadmin --> Produto: jsonProduto{id_produto}
+Produto --> ProdutoController: jsonProduto{id_produto}
+ProdutoController --> ClienteWeb: jsonProduto{id_produto}
 
-ClienteWeb -> ProdutoController: POST /produtos/movimentar&{id}
+ClienteWeb -> ProdutoController: POST /produtos/movimentar&{id_produto}
 ProdutoController -> phpmyadmin: movimentar()
-phpmyadmin --> Produto: jsonProduto{id}
-Produto --> ProdutoController: jsonProduto{id}
-ProdutoController --> ClienteWeb: jsonProduto{id}
+phpmyadmin --> Produto: jsonProduto{id_produto}
+Produto --> ProdutoController: jsonProduto{id_produto}
+ProdutoController --> ClienteWeb: jsonProduto{id_produto}
 
-ClienteWeb -> ProdutoController: DELETE /produtos/excluir&{id}
+ClienteWeb -> ProdutoController: DELETE /produtos/excluir&{id_produto}
 ProdutoController -> phpmyadmin: excluirProduto()
-phpmyadmin --> Produto: jsonProduto{id}
-Produto --> ProdutoController: jsonProduto{id}
-ProdutoController --> ClienteWeb: jsonProduto{id}
+phpmyadmin --> Produto: jsonProduto{id_produto}
+Produto --> ProdutoController: jsonProduto{id_produto}
+ProdutoController --> ClienteWeb: jsonProduto{id_produto}
 
 ClienteWeb -> FornecedorController: GET /fornecedores
 FornecedorController -> phpmyadmin: listarFornecedores()
@@ -134,23 +140,23 @@ phpmyadmin --> Fornecedor
 Fornecedor --> FornecedorController
 FornecedorController --> ClienteWeb
 
-ClienteWeb -> FornecedorController: GET /fornecedores/editar
+ClienteWeb -> FornecedorController: GET /fornecedores/editar&{id_fornecedor}
 FornecedorController -> phpmyadmin: prepararEdicaoFornecedor()
-phpmyadmin --> Fornecedor: jsonFornecedores
-Fornecedor --> FornecedorController: jsonFornecedores
-FornecedorController --> ClienteWeb: jsonFornecedores
+phpmyadmin --> Fornecedor: jsonFornecedor{id_fornecedor}
+Fornecedor --> FornecedorController: jsonFornecedor{id_fornecedor}
+FornecedorController --> ClienteWeb: jsonFornecedor{id_fornecedor}
 
-ClienteWeb -> FornecedorController: PUT /fornecedores/salvar&{id}
+ClienteWeb -> FornecedorController: PUT /fornecedores/salvar&{id_fornecedor}
 FornecedorController -> phpmyadmin: salvarFornecedor()
-phpmyadmin --> Fornecedor: jsonFornecedores{id}
-Fornecedor --> FornecedorController: jsonFornecedores{id}
-FornecedorController --> ClienteWeb: jsonFornecedores{id}
+phpmyadmin --> Fornecedor: jsonFornecedores{id_fornecedor}
+Fornecedor --> FornecedorController: jsonFornecedor{id_fornecedor}
+FornecedorController --> ClienteWeb: jsonFornecedor{id_fornecedor}
 
-ClienteWeb -> FornecedorController: DELETE /fornecedores/excluir&{id}
+ClienteWeb -> FornecedorController: DELETE /fornecedores/excluir&{id_fornecedor}
 FornecedorController -> phpmyadmin: excluirFornecedor()
-phpmyadmin --> Fornecedor: jsonFornecedores{id}
-Fornecedor --> FornecedorController: jsonFornecedores{id}
-FornecedorController --> ClienteWeb: jsonFornecedores{id}
+phpmyadmin --> Fornecedor: jsonFornecedor{id_fornecedor}
+Fornecedor --> FornecedorController: jsonFornecedor{id_fornecedor}
+FornecedorController --> ClienteWeb: jsonFornecedor{id_fornecedor}
 
 ClienteWeb -> RelatorioController: GET /relatorios
 RelatorioController -> phpmyadmin: prepararMenu()
