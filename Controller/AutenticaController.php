@@ -31,7 +31,7 @@
 
                     $endereco = $usuario->enderecoPaginaInicial();
 
-                    header("Location: " . $endereco);
+                    header("Location: ../dashboard");
                     exit();
                 } else {
                     header("Location: ../index.php");
@@ -41,7 +41,7 @@
 
             public function logout(){
                 session_destroy();
-                header("Location: ../View/Login.php");
+                header("Location: ../index.php");
                 exit();
             }
         }

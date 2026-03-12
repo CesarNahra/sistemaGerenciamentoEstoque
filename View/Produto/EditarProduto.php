@@ -25,7 +25,7 @@
     <div class="container">
         <h1>Editar Produto</h1>
 
-        <form action="/sistemaGerenciamentoEstoque/produtos/salvar" method="POST">
+        <form action="/sistemaGerenciamentoEstoque/produtos/atualizar" method="POST">
             <fieldset>
                 <legend>Dados Principais</legend>
                 
