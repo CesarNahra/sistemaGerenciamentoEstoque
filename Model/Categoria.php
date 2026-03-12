@@ -31,9 +31,9 @@
             $consultaSql = "UPDATE categorias SET nome = :nome WHERE id = :id_categoria AND id_usuario = :id_usuario";
 
             $declaracao = $conexao->prepare($consultaSql);
-            $declaracao -> bindValue(':id_usuario', $id_usuario);
-            $declaracao -> bindValue(':id_categoria', $id_categoria);
-            $declaracao -> bindValue(':nome', $nome);
+            $declaracao -> bindValue(":id_usuario", $id_usuario);
+            $declaracao -> bindValue(":id_categoria", $id_categoria);
+            $declaracao -> bindValue(":nome", $nome);
 
             return $declaracao->execute();
         }
