@@ -61,13 +61,10 @@
         }
     </style>
 </head>
-<body>
+<body class="<?= isset($_SESSION['tema']) && $_SESSION['tema'] == 'dark' ? 'dark-mode' : '' ?>">
     <nav>
         <div class="nav-brand">
-            <span class="company-name">🏢 <?php echo $_SESSION['nome']; ?></span>
-        </div>
-        <div class="nav-links">
-            <a href="ClienteController.php?acao=dashboard">🏠 Início</a>
+            <a href="ClienteController.php?acao=dashboard" class="company-name">🏢 <?php echo $_SESSION['nome']; ?></a>
         </div>
         <div class="nav-logout">
             <a href="AutenticaController.php?acao=logout" class="btn-logout">🚪 Sair</a>

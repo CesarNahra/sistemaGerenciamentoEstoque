@@ -6,17 +6,17 @@
     <link rel="stylesheet" href="../View/Assets/style.css">
     <link rel="manifest" href="../manifest.json">
 </head>
-<body>
-
+<body class="<?= isset($_SESSION['tema']) && $_SESSION['tema'] == 'dark' ? 'dark-mode' : '' ?>">
     <nav>
         <div class="nav-brand">
-            <span class="company-name">🏢 <?php echo $_SESSION['nome']; ?></span>
+            <a href="ClienteController.php?acao=dashboard" class="company-name">🏢 <?php echo $_SESSION['nome']; ?></a>
         </div>
         <div class="nav-links">
-            <a href="ClienteController.php?acao=dashboard">🏠 Menu</a>
             <a href="ProdutoController.php?acao=listarProdutos">📦 Produtos</a>
             <a href="FornecedorController.php?acao=listarFornecedores">🚛 Fornecedores</a>
             <a href="CategoriaController.php?acao=listarCategorias">🏷️ Categorias</a>
+            <a href="RelatorioController.php?acao=prepararMenu">📊 Relatórios</a>
+            <a href="ClienteController.php?acao=configuracoes">⚙️ Configurações</a>
         </div>
         <div class="nav-logout">
             <a href="AutenticaController.php?acao=logout" class="btn-logout">🚪 Sair</a>

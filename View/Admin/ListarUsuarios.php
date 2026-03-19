@@ -9,13 +9,9 @@
 <body>
     <nav>
         <div class="nav-brand">
-            <span class="company-name">🛡️ Admin: <?php echo $_SESSION['nome']; ?></span>
+            <a href="AdminController.php?acao=listar" class="company-name">🛡️ Admin: <?php echo $_SESSION['nome']; ?></a>
         </div>
         
-        <div class="nav-links">
-            <span style="color: white; font-weight: bold;">Gestão do Sistema</span>
-        </div>
-
         <div class="nav-logout">
             <a href="AutenticaController.php?acao=logout" class="btn-logout">🚪 Sair</a>
         </div>
